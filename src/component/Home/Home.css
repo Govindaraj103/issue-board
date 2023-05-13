@@ -1,0 +1,22 @@
+.__btb-color{
+
+    background-color: white;
+    color: black;
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    border-color: black;
+}
+
+.__btb-color:hover{
+    background-color: black;
+    color: white;   
+     border: 1px;
+
+}
+.color{
+    border-color: rgb(241, 218, 10);
+   
+    border-bottom: 1px;
+
+}
