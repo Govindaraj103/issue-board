@@ -14,12 +14,11 @@ const Home = () => {
 
   console.log(IssueList);
   return (
-    <div>
+    <div className="header1">
       <button className="__btb-color" onClick={NavigateCreate}>
         Create new issue
       </button>
       <div className="flex-large">
-        <h2>View users</h2>
         <View IssueList={IssueList} />
       </div>
     </div>
