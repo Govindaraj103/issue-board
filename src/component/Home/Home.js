@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import View from '../View/View';
-import { isCompositeComponent } from 'react-dom/test-utils';
+
 const Home = () => {
   const navigate = useNavigate();
 

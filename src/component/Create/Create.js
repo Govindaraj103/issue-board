@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Home/Home.css';
 import '../Create/create.css';
 
@@ -6,30 +7,17 @@ const Create = (props) => {
   const [titleValue, setTitleValue] = useState(props.title);
   const [descValue, setDescValue] = useState(props.desc);
 
-  const [data, setData] = useState('');
+  const navigate = useNavigate();
+  const issueStorage = JSON.parse(localStorage.getItem('Issue'));
 
-  const getIssue = JSON.parse(localStorage.getItem('Issue'));
-
-  const uID = Math.floor(Math.random() * 100);
-
-  const Edit = () => {
-    const issue = { title: titleValue, desc: descValue };
-    localStorage.setItem('Issue', JSON.stringify(issue));
-  };
-
-  const Create = () => {
+  const onClickHandler = () => {
+    const uID = Math.floor(Math.random() * 100);
     const issue = { id: uID, title: titleValue, desc: descValue };
-    const value = [...getIssue, issue];
-    console.log(value);
-
+    const value = [...issueStorage, issue];
     localStorage.setItem('Issue', JSON.stringify(value));
-    // const data1 = localStorage.getItem('Issue');
-    // setData(data1);
+    navigate('/');
   };
 
-  const deleteIssue = () => {
-    localStorage.removeItem('Issue');
-  };
   return (
     <div className="header">
       <br />
@@ -49,16 +37,9 @@ const Create = (props) => {
       />
       <br />
       <br />
-      <button className="buttenC" onClick={Create}>
+      <button className="buttenC" onClick={onClickHandler}>
         Create
       </button>
-      {/* <button className="buttenE" onClick={Edit}>
-        Edit
-      </button>
-      <button className="buttenD" onClick={deleteIssue}>
-        Delete
-      </button> */}
-      <h3>{data}</h3>
     </div>
   );
 };
