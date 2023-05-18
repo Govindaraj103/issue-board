@@ -4,8 +4,8 @@ import '../Home/Home.css';
 import '../Create/create.css';
 
 const Create = (props) => {
-  const [titleValue, setTitleValue] = useState(props.title);
-  const [descValue, setDescValue] = useState(props.desc);
+  const [titleValue, setTitleValue] = useState('');
+  const [descValue, setDescValue] = useState('');
 
   const navigate = useNavigate();
   const issueStorage = JSON.parse(localStorage.getItem('Issue'));

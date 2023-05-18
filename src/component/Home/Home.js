@@ -12,7 +12,6 @@ const Home = () => {
 
   const IssueList = JSON.parse(localStorage.getItem('Issue'));
 
-  console.log(IssueList);
   return (
     <div className="header1">
       <button className="__btb-color" onClick={NavigateCreate}>
